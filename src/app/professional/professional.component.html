@@ -1,0 +1,30 @@
+<div class="profile-container">
+  <img class="profile" src="{{ professional.profileImage }}" />
+  <div class="profile-content">
+    <h1>{{ professional.name }}</h1>
+    <span>
+      <span class="profile-role">{{ professional.role }}</span> |
+      {{ professional.location }}
+    </span>
+    <div class="stars">
+      <div *ngFor="let star of getStars()">
+        <fa-icon
+          [icon]="faStar"
+          [styles]="{ stroke: 'gold', color: 'gold' }"
+        ></fa-icon>
+      </div>
+      <div *ngFor="let star of getEmptyStars()">
+        <fa-icon
+          [icon]="faStartOutline"
+          [styles]="{ stroke: 'gold', color: 'gold' }"
+        ></fa-icon>
+        <span>({{ professional.reviews }} reviews)</span>
+      </div>
+    </div>
+    <span
+      >R$ {{ professional.price / 100 | number }} /
+      {{ professional.sessionTime }}</span
+    >
+  </div>
+</div>
+<p>{{ professional.description }}</p>

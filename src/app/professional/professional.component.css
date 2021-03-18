@@ -1,0 +1,26 @@
+.profile-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile {
+  background-color: grey;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-role {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: deepskyblue;
+}
+
+.stars {
+  display: flex;
+}

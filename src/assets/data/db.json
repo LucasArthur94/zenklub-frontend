@@ -1,0 +1,48 @@
+{
+  "professionals": [
+    {
+      "id": 1,
+      "profileImage": "url",
+      "location": "Lisbon",
+      "role": "Psychologist",
+      "name": "Professional name",
+      "rating": 4,
+      "reviews": 20,
+      "price": 16000,
+      "sessionTime": 90,
+      "description": "Lorem ipsum dolor sit amet",
+      "periods": [
+        "2021-03-17T08:00:00.000Z",
+        "2021-03-17T08:30:00.000Z",
+        "2021-03-17T09:00:00.000Z",
+        "2021-03-17T09:30:00.000Z",
+        "2021-03-18T08:00:00.000Z",
+        "2021-03-18T08:30:00.000Z",
+        "2021-03-18T09:00:00.000Z",
+        "2021-03-18T09:30:00.000Z"
+      ]
+    },
+    {
+      "id": 2,
+      "profileImage": "url",
+      "location": "Lisbon",
+      "role": "Psychologist",
+      "name": "Another professional name",
+      "rating": 4,
+      "reviews": 10,
+      "price": 15000,
+      "sessionTime": 60,
+      "description": "Lorem ipsum dolor sit amet",
+      "periods": [
+        "2021-03-17T08:00:00.000Z",
+        "2021-03-17T08:30:00.000Z",
+        "2021-03-17T09:00:00.000Z",
+        "2021-03-17T09:30:00.000Z",
+        "2021-03-18T08:00:00.000Z",
+        "2021-03-18T08:30:00.000Z",
+        "2021-03-18T09:00:00.000Z",
+        "2021-03-18T09:30:00.000Z"
+      ]
+    }
+  ]
+}
