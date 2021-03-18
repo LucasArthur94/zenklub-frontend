@@ -1,6 +1,23 @@
+.page {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-resume {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
 .profile-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  max-width: 54%;
 }
 
 .profile {
@@ -21,6 +38,98 @@
   color: deepskyblue;
 }
 
+.price-and-time {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  max-width: 8vw;
+}
+
+.profile-description {
+  margin-top: 20px;
+  max-width: 80%;
+}
+
 .stars {
   display: flex;
+}
+
+.calendar {
+  width: 30%;
+}
+
+.calendar-header {
+  background-color: deepskyblue;
+  color: white;
+  text-align: center;
+}
+
+.calendar-header-title {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.calendar-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 0 10px 4px lightgray;
+}
+
+.calendar-dates {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 4px;
+}
+
+.day-of-week {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+}
+
+.day-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+}
+
+.hours-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hour-block {
+  background-color: lightgrey;
+  padding: 16px;
+  margin: 4px;
+  min-width: 60px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: darkslategrey;
+  cursor: pointer;
+}
+
+.hour-block:hover {
+  background-color: grey;
+}
+
+.calendar-body {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 0 10px 4px lightgray;
+}
+
+.arrow-button {
+  background-color: #00000000;
+  border: 0;
+  cursor: pointer;
 }

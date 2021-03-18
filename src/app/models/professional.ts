@@ -1,6 +1,7 @@
 export interface Professional {
   id: number;
   profileImage: string;
+  hoursDiff: string;
   role: string;
   location: string;
   name: string;

@@ -1,30 +1,90 @@
-<div class="profile-container">
-  <img class="profile" src="{{ professional.profileImage }}" />
-  <div class="profile-content">
-    <h1>{{ professional.name }}</h1>
-    <span>
-      <span class="profile-role">{{ professional.role }}</span> |
-      {{ professional.location }}
-    </span>
-    <div class="stars">
-      <div *ngFor="let star of getStars()">
-        <fa-icon
-          [icon]="faStar"
-          [styles]="{ stroke: 'gold', color: 'gold' }"
-        ></fa-icon>
-      </div>
-      <div *ngFor="let star of getEmptyStars()">
-        <fa-icon
-          [icon]="faStartOutline"
-          [styles]="{ stroke: 'gold', color: 'gold' }"
-        ></fa-icon>
-        <span>({{ professional.reviews }} reviews)</span>
+<div class="page">
+  <div class="profile-resume">
+    <div class="profile-container">
+      <img class="profile" src="{{ professional.profileImage }}" />
+      <div class="profile-content">
+        <h1>{{ professional.name }}</h1>
+        <span>
+          <span class="profile-role">{{ professional.role }}</span> |
+          {{ professional.location }}
+        </span>
+        <div class="stars">
+          <div *ngFor="let star of getStars()">
+            <fa-icon
+              [icon]="faStar"
+              [styles]="{ stroke: 'gold', color: 'gold' }"
+            ></fa-icon>
+          </div>
+          <div *ngFor="let star of getEmptyStars()">
+            <fa-icon
+              [icon]="faStartOutline"
+              [styles]="{ stroke: 'gold', color: 'gold' }"
+            ></fa-icon>
+            <span>({{ professional.reviews }} reviews)</span>
+          </div>
+        </div>
+        <div class="price-and-time">
+          <h2>R${{ professional.price / 100 | number }}</h2>
+          <span> / </span>
+          <h3>{{ professional.sessionTime }} minutes</h3>
+        </div>
       </div>
     </div>
-    <span
-      >R$ {{ professional.price / 100 | number }} /
-      {{ professional.sessionTime }}</span
-    >
+    <p class="profile-description">{{ professional.description }}</p>
+  </div>
+  <div class="calendar">
+    <div class="calendar-header">
+      <h3 class="calendar-header-title">Schedule your session!</h3>
+      <h4>
+        Timezone: {{ professional.location }} ({{ professional.hoursDiff }})
+      </h4>
+    </div>
+    <div class="calendar-block">
+      <button class="arrow-button">
+        <fa-icon
+          [icon]="faArrowCircleLeft"
+          size="2x"
+          [styles]="{ margin: '4px' }"
+        ></fa-icon>
+      </button>
+      <div
+        class="calendar-dates"
+        *ngFor="let professionalDate of getProfessionalDates()"
+      >
+        <div class="day-block">
+          <span class="day-of-week">{{ professionalDate.dayOfWeek }}</span>
+          <span>{{ professionalDate.stringDate }}</span>
+        </div>
+      </div>
+      <button class="arrow-button">
+        <fa-icon
+          [icon]="faArrowCircleRight"
+          size="2x"
+          [styles]="{ margin: '4px' }"
+        ></fa-icon>
+      </button>
+    </div>
+    <div class="calendar-body">
+      <fa-icon
+        [icon]="faArrowCircleLeft"
+        size="2x"
+        [styles]="{ opacity: '0', margin: '4px' }"
+      ></fa-icon>
+      <div class="hours-block" *ngFor="let professionalDateSlots of getSlots()">
+        <div *ngFor="let slot of professionalDateSlots.periods">
+          <div class="hour-block">
+            {{ slot }}
+          </div>
+        </div>
+        <div>
+          <div class="hour-block">MORE</div>
+        </div>
+      </div>
+      <fa-icon
+        [icon]="faArrowCircleRight"
+        size="2x"
+        [styles]="{ opacity: '0', margin: '4px' }"
+      ></fa-icon>
+    </div>
   </div>
 </div>
-<p>{{ professional.description }}</p>

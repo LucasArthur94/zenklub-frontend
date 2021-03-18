@@ -4,13 +4,14 @@
       "id": 1,
       "profileImage": "url",
       "location": "Lisbon",
+      "hoursDiff": "+1",
       "role": "Psychologist",
       "name": "Professional name",
       "rating": 4,
       "reviews": 20,
       "price": 16000,
       "sessionTime": 90,
-      "description": "Lorem ipsum dolor sit amet",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed magna at enim lacinia tempor eget at dui. Aenean euismod, urna a bibendum vulputate, arcu metus pulvinar risus, id dictum urna tortor et est. Donec varius, libero vitae cursus fermentum, ante lacus fermentum est, vel ultricies ipsum ex vel urna. Aliquam ultrices efficitur sapien id viverra. Quisque ac enim vulputate, congue leo vitae, cursus turpis. Integer ultrices bibendum arcu, in pretium arcu elementum sit amet. Sed neque nibh, accumsan id quam ac, finibus bibendum arcu. Praesent viverra sem tortor, vitae iaculis magna mattis in. Pellentesque accumsan, nunc vel vulputate lobortis, elit odio sollicitudin mi, eget molestie sapien urna vel sapien. Etiam orci turpis, malesuada et fringilla vel, efficitur nec dui. Pellentesque posuere nisl turpis, vitae bibendum quam dictum sit amet. Donec dapibus orci vel tellus pharetra, vitae finibus neque faucibus.",
       "periods": [
         "2021-03-17T08:00:00.000Z",
         "2021-03-17T08:30:00.000Z",
@@ -19,20 +20,25 @@
         "2021-03-18T08:00:00.000Z",
         "2021-03-18T08:30:00.000Z",
         "2021-03-18T09:00:00.000Z",
-        "2021-03-18T09:30:00.000Z"
+        "2021-03-18T09:30:00.000Z",
+        "2021-03-19T08:00:00.000Z",
+        "2021-03-19T08:30:00.000Z",
+        "2021-03-20T09:00:00.000Z",
+        "2021-03-20T09:30:00.000Z"
       ]
     },
     {
       "id": 2,
       "profileImage": "url",
       "location": "Lisbon",
+      "hoursDiff": "+1",
       "role": "Psychologist",
       "name": "Another professional name",
       "rating": 4,
       "reviews": 10,
       "price": 15000,
       "sessionTime": 60,
-      "description": "Lorem ipsum dolor sit amet",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed magna at enim lacinia tempor eget at dui. Aenean euismod, urna a bibendum vulputate, arcu metus pulvinar risus, id dictum urna tortor et est. Donec varius, libero vitae cursus fermentum, ante lacus fermentum est, vel ultricies ipsum ex vel urna. Aliquam ultrices efficitur sapien id viverra. Quisque ac enim vulputate, congue leo vitae, cursus turpis. Integer ultrices bibendum arcu, in pretium arcu elementum sit amet. Sed neque nibh, accumsan id quam ac, finibus bibendum arcu. Praesent viverra sem tortor, vitae iaculis magna mattis in. Pellentesque accumsan, nunc vel vulputate lobortis, elit odio sollicitudin mi, eget molestie sapien urna vel sapien. Etiam orci turpis, malesuada et fringilla vel, efficitur nec dui. Pellentesque posuere nisl turpis, vitae bibendum quam dictum sit amet. Donec dapibus orci vel tellus pharetra, vitae finibus neque faucibus.",
       "periods": [
         "2021-03-17T08:00:00.000Z",
         "2021-03-17T08:30:00.000Z",
@@ -41,7 +47,11 @@
         "2021-03-18T08:00:00.000Z",
         "2021-03-18T08:30:00.000Z",
         "2021-03-18T09:00:00.000Z",
-        "2021-03-18T09:30:00.000Z"
+        "2021-03-18T09:30:00.000Z",
+        "2021-03-19T08:00:00.000Z",
+        "2021-03-19T08:30:00.000Z",
+        "2021-03-20T09:00:00.000Z",
+        "2021-03-20T09:30:00.000Z"
       ]
     }
   ]
