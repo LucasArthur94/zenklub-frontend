@@ -9,6 +9,8 @@ import { faStar as faStartOutline } from '@fortawesome/free-regular-svg-icons';
 import { Professional } from '../models/professional';
 import { ProfessionalsService } from '../services/professionals.service';
 
+const ITEMS_PER_PAGE = 4;
+
 const MONTHS: Record<number, string> = {
   0: 'JAN',
   1: 'FEB',
@@ -47,6 +49,8 @@ export class ProfessionalComponent implements OnInit {
   faArrowCircleRight = faArrowCircleRight;
   professionalId = '';
   professional = {} as Professional;
+  page = 1;
+  totalPages = 1;
 
   constructor(
     public router: Router,
@@ -94,9 +98,10 @@ export class ProfessionalComponent implements OnInit {
   getProfessionalDates() {
     if (!this.professional) return [];
 
-    return this.professional.periods
-      .sort()
-      .reduce((acc: Array<{ stringDate: string; dayOfWeek: string }>, date) => {
+    const sortedPeriods = this.professional.periods.sort();
+
+    return sortedPeriods.reduce(
+      (acc: Array<{ stringDate: string; dayOfWeek: string }>, date) => {
         const parsedDate = new Date(date);
 
         const formattedDate = this.formatDate(parsedDate);
@@ -113,7 +118,29 @@ export class ProfessionalComponent implements OnInit {
             dayOfWeek: DAYS[parsedDate.getDay()],
           },
         ];
-      }, []);
+      },
+      []
+    );
+  }
+
+  movePage(quantity: number) {
+    this.page = Math.min(this.page + quantity, this.totalPages);
+  }
+
+  makePage(list: Array<Record<string, any>>) {
+    this.totalPages = Math.floor(list.length / ITEMS_PER_PAGE);
+
+    const startIndex = Math.max((this.page - 1) * ITEMS_PER_PAGE, 0);
+
+    return list.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  }
+
+  getDates() {
+    if (!this.professional) return [];
+
+    const allProfessionalDates = this.getProfessionalDates();
+
+    return this.makePage(allProfessionalDates);
   }
 
   getSlots() {
@@ -121,7 +148,7 @@ export class ProfessionalComponent implements OnInit {
 
     if (!professionalDates.length) return [];
 
-    return professionalDates.map((savedDate) => {
+    const professionalDatesAndSlots = professionalDates.map((savedDate) => {
       const professionalValidDates = this.professional.periods.filter(
         (date) => this.formatDate(new Date(date)) === savedDate.stringDate
       );
@@ -133,5 +160,7 @@ export class ProfessionalComponent implements OnInit {
         ),
       };
     });
+
+    return this.makePage(professionalDatesAndSlots);
   }
 }

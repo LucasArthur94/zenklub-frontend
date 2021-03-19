@@ -67,13 +67,16 @@
 .calendar-header-title {
   font-weight: bold;
   font-size: 24px;
+  padding: 4px 0;
+  margin-bottom: 0;
 }
 
 .calendar-block {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
   justify-content: space-between;
-  box-shadow: 0 10px 4px lightgray;
+  box-shadow: 0 4px 4px lightgray;
+  min-width: 40px;
 }
 
 .calendar-dates {
@@ -108,9 +111,9 @@
   background-color: lightgrey;
   padding: 16px;
   margin: 4px;
-  min-width: 60px;
+  min-width: 40px;
   text-align: center;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   color: darkslategrey;
   cursor: pointer;
@@ -121,11 +124,15 @@
 }
 
 .calendar-body {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
   margin-top: 16px;
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  box-shadow: 0 10px 4px lightgray;
+  box-shadow: 0 4px 4px lightgray;
+}
+
+.calendar-margin {
+  min-width: 27px;
 }
 
 .arrow-button {
