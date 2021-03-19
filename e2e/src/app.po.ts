@@ -5,7 +5,11 @@ export class AppPage {
     return browser.get(browser.baseUrl);
   }
 
-  async getTitleText(): Promise<string> {
-    return element(by.css('app-root .content span')).getText();
+  async navigateToPage(path: string): Promise<unknown> {
+    return browser.get(`${browser.baseUrl}/${path}`);
+  }
+
+  async getByProfessionalName(): Promise<string> {
+    return element(by.xpath('//h1')).getText();
   }
 }

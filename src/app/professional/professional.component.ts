@@ -51,6 +51,7 @@ export class ProfessionalComponent implements OnInit {
   professional = {} as Professional;
   page = 1;
   totalPages = 1;
+  maxPeriodsPerDay = 5;
 
   constructor(
     public router: Router,
@@ -72,12 +73,14 @@ export class ProfessionalComponent implements OnInit {
       });
   }
 
-  getNumberOfEmptyStars() {
-    return this.MAX_NUMBER_OF_STARS - this.professional.rating;
-  }
-
   getEmptyStars() {
-    return Array(this.getNumberOfEmptyStars());
+    const emptyStartsQuantity =
+      this.MAX_NUMBER_OF_STARS -
+      (this.professional?.rating ?? this.MAX_NUMBER_OF_STARS);
+
+    if (emptyStartsQuantity <= 0) return [];
+
+    return Array(emptyStartsQuantity);
   }
 
   getStars() {
@@ -98,7 +101,11 @@ export class ProfessionalComponent implements OnInit {
   getProfessionalDates() {
     if (!this.professional) return [];
 
-    const sortedPeriods = this.professional.periods.sort();
+    const sortedPeriods = this.professional.periods?.sort((a, b) =>
+      a > b ? 1 : -1
+    );
+
+    if (!sortedPeriods) return [];
 
     return sortedPeriods.reduce(
       (acc: Array<{ stringDate: string; dayOfWeek: string }>, date) => {
@@ -155,9 +162,9 @@ export class ProfessionalComponent implements OnInit {
 
       return {
         ...savedDate,
-        periods: professionalValidDates.map((slot) =>
-          this.formatHourAndMinute(new Date(slot))
-        ),
+        periods: professionalValidDates
+          .map((slot) => this.formatHourAndMinute(new Date(slot)))
+          .slice(0, this.maxPeriodsPerDay),
       };
     });
 

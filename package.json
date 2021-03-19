@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
+    "e2e": "concurrently --kill-others 'npm run mock-server' 'ng e2e'",
     "mock-server": "json-server --watch src/assets/data/db.json",
     "dev": "concurrently --kill-others 'npm run start' 'npm run mock-server'"
   },

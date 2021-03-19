@@ -7,7 +7,7 @@
         alt="Picture of {{ professional.name }}"
       />
       <div class="profile-content">
-        <h1>{{ professional.name }}</h1>
+        <h1 data-testid="professional-name">{{ professional.name }}</h1>
         <span>
           <span class="profile-role">{{ professional.role }}</span> |
           {{ professional.location }}
@@ -81,7 +81,7 @@
             {{ slot }}
           </div>
         </div>
-        <div *ngIf="professionalDateSlots.periods.length >= 4">
+        <div *ngIf="professionalDateSlots.periods.length >= maxPeriodsPerDay">
           <div class="hour-block">MORE</div>
         </div>
       </div>

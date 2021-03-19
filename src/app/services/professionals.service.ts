@@ -27,7 +27,6 @@ export class ProfessionalsService {
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  // Obtem um Professionalro pelo id
   getProfessionalById(id: number): Observable<Professional> {
     return this.httpClient
       .get<Professional>(this.url + '/' + id)
@@ -36,10 +35,8 @@ export class ProfessionalsService {
 
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
-      // Erro ocorreu no lado do client
       return throwError(error.error.message);
     } else {
-      // Erro ocorreu no lado do servidor
       return throwError(
         `Código do erro: ${error.status}, ` + `menssagem: ${error.message}`
       );
